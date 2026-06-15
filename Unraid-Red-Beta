@@ -1,0 +1,655 @@
+/* Additional CSS (Red Theme - Neutral Transparent Glass)
+ * Public-clean base theme.
+ * Optional personal overrides should live in a separate file.
+ */
+
+/******************************************************
+ * Theme Variables
+ ******************************************************/
+:root {
+  --custom-dashboard-tile-radius: 18px;
+  --custom-dashboard-widget-gap: 16px;
+
+  /* Lower = more transparent, higher = easier to read */
+  --custom-dashboard-tile-bg: rgba(38, 38, 38, 0.52);
+  --custom-dashboard-tile-border: rgba(255, 255, 255, 0.16);
+  --custom-dashboard-tile-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --custom-dashboard-tile-blur: 20px;
+
+  /* Table-specific glass values */
+  --custom-table-cell-bg: rgba(38, 38, 38, 0.46);
+  --custom-table-header-bg: rgba(38, 38, 38, 0.66);
+  --custom-table-hover-bg: rgba(255, 255, 255, 0.10);
+
+  /* Theme colors */
+  --custom-theme-accent: #ff6b6b;
+  --custom-theme-accent-strong: #ef4444;
+  --custom-theme-text: #ef4444;
+  --custom-theme-icon: #ef4444;
+  --custom-theme-icon-hover: #ff6b6b;
+  --custom-theme-nav-line: #00c853;
+}
+
+
+/******************************************************
+ * Background Image
+ ******************************************************/
+html,
+body {
+  min-height: 100% !important;
+  background-color: transparent !important;
+}
+
+body {
+  background-color: #1f0909 !important;
+  background-image: url('/plugins/custom.css/assets/bg.jpg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+#template,
+#content,
+.content,
+main,
+div#main,
+div#page,
+div#displaybox,
+div.template,
+div.content,
+#background,
+#page-container,
+#layout,
+#main {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+
+/******************************************************
+ * Transparent Header + Themed Header Branding
+ ******************************************************/
+#header,
+#header.image {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+#header unraid-header-os-version,
+#header unraid-user-profile,
+#UserProfile {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+#header .unraid-banner-gradient-layer,
+#UserProfile .unraid-banner-gradient-layer {
+  display: none !important;
+  background: transparent !important;
+}
+
+#header,
+#header *,
+#UserProfile,
+#UserProfile * {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+#header > unraid-header-os-version > div > a > img {
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(38%)
+    sepia(82%)
+    saturate(3575%)
+    hue-rotate(341deg)
+    brightness(97%)
+    contrast(91%)
+    drop-shadow(0 0 6px rgba(239, 68, 68, 0.65)) !important;
+  opacity: 1 !important;
+}
+
+#header span[class~="text-header-text-primary"][class~="xs:text-base"][class~="flex"][class~="items-center"][class~="text-sm"] {
+  background: linear-gradient(
+    90deg,
+    #991b1b 0%,
+    #ef4444 35%,
+    #ff6b6b 70%,
+    #fee2e2 100%
+  ) !important;
+
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  text-shadow: 0 0 8px rgba(248, 113, 113, 0.45) !important;
+}
+
+
+/******************************************************
+ * Dashboard Control / Action Icons
+ * Removes button backgrounds/fills without touching status icons.
+ ******************************************************/
+.tile-header-right .control,
+.tile-header-right-controls .control,
+.tile-header-right i.control,
+.tile-header-right-controls i.control,
+.tile-header-right .fa.control,
+.tile-header-right-controls .fa.control,
+.tile-ctrl .fa,
+.tile-ctrl span.fa,
+span[class^="fa fa-fw fa-"].control,
+span[class*=" fa fa-fw fa-"].control,
+i.fa.fa-fw.fa-cog.control,
+i.fa.fa-fw.fa-eject.control,
+i.fa.fa-fw.fa-chevron-up.control.openclose,
+i.fa.fa-fw.fa-info-circle.control {
+  color: var(--custom-theme-icon) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+.tile-header-right a,
+.tile-header-right-controls a,
+.tile-header-right span,
+.tile-header-right-controls span,
+.tile-ctrl,
+.tile-ctrl span,
+.tile-ctrl a,
+.tile-header-right [class*="control"],
+.tile-header-right-controls [class*="control"],
+.tile-header-right [class*="button"],
+.tile-header-right-controls [class*="button"],
+.tile-header-right [role="button"],
+.tile-header-right-controls [role="button"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+.tile-header-right .control::before,
+.tile-header-right .control::after,
+.tile-header-right-controls .control::before,
+.tile-header-right-controls .control::after,
+.tile-header-right a::before,
+.tile-header-right a::after,
+.tile-header-right-controls a::before,
+.tile-header-right-controls a::after,
+.tile-ctrl .fa::before,
+.tile-ctrl .fa::after,
+.tile-ctrl span::before,
+.tile-ctrl span::after {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+.tile-header-right i.fa:hover,
+.tile-header-right-controls i.fa:hover,
+.tile-ctrl span.fa:hover,
+.tile-header-right a:hover,
+.tile-header-right a:focus,
+.tile-header-right a:active,
+.tile-header-right-controls a:hover,
+.tile-header-right-controls a:focus,
+.tile-header-right-controls a:active,
+.tile-header-right .control:hover,
+.tile-header-right .control:focus,
+.tile-header-right .control:active,
+.tile-header-right-controls .control:hover,
+.tile-header-right-controls .control:focus,
+.tile-header-right-controls .control:active,
+.tile-ctrl span:hover,
+.tile-ctrl span:focus,
+.tile-ctrl span:active {
+  color: var(--custom-theme-icon-hover) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+
+/******************************************************
+ * Glass Navigation Menu
+ ******************************************************/
+#menu {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+#menu .nav-tile,
+#menu .nav-tile.right {
+  background: var(--custom-dashboard-tile-bg) !important;
+  background-color: var(--custom-dashboard-tile-bg) !important;
+  backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+  border: 1px solid var(--custom-dashboard-tile-border) !important;
+  border-radius: var(--custom-dashboard-tile-radius) !important;
+  box-shadow: var(--custom-dashboard-tile-shadow) !important;
+  overflow: hidden !important;
+}
+
+#menu .nav-item,
+#menu .nav-user {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+#menu .nav-item a,
+#menu .nav-item b,
+#menu .nav-item span {
+  background: transparent !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+#menu .nav-item.active {
+  background: rgba(255, 255, 255, 0.12) !important;
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+#menu .nav-item:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+#menu > div:nth-child(1),
+#menu > div:nth-child(1) *,
+#menu > div:first-child,
+#menu > div:first-child *,
+#menu .nav-tile:not(.right),
+#menu .nav-tile:not(.right) *,
+#menu .nav-title,
+#menu .nav-title *,
+#menu .nav-item,
+#menu .nav-item a,
+#menu .nav-item span,
+#menu .nav-item b,
+#menu .nav-item i,
+#menu .nav-item svg {
+  color: var(--custom-theme-accent) !important;
+  fill: var(--custom-theme-accent) !important;
+  stroke: var(--custom-theme-accent) !important;
+}
+
+#menu .nav-item.active,
+#menu .nav-item.active *,
+#menu .nav-item.active a {
+  color: var(--custom-theme-accent-strong) !important;
+  fill: var(--custom-theme-accent-strong) !important;
+  stroke: var(--custom-theme-accent-strong) !important;
+}
+
+.nav-title::after,
+div.nav-title::after,
+#menu div.nav-item.active::after,
+#menu .nav-item.active::after,
+#menu > div:nth-child(1) .nav-item.active::after,
+#menu .nav-tile:not(.right) .nav-item.active::after,
+#menu .nav-title::after,
+#menu div.nav-title::after {
+  background: var(--custom-theme-nav-line) !important;
+  background-color: var(--custom-theme-nav-line) !important;
+  border-color: var(--custom-theme-nav-line) !important;
+  color: var(--custom-theme-nav-line) !important;
+}
+
+
+/******************************************************
+ * Dashboard Widget Links / Accent Text
+ ******************************************************/
+tbody.sortable a,
+div.title a {
+  color: var(--custom-theme-text) !important;
+}
+
+#menu > div:nth-child(1) a,
+#menu > div:first-child a,
+#menu .nav-tile:not(.right) a,
+#menu .nav-item a,
+#menu .nav-item span,
+#menu .nav-item b,
+#menu .nav-item i,
+#menu .nav-item svg {
+  color: var(--custom-theme-accent) !important;
+  fill: var(--custom-theme-accent) !important;
+  stroke: var(--custom-theme-accent) !important;
+}
+
+#menu .nav-item.active a,
+#menu .nav-item.active span,
+#menu .nav-item.active b,
+#menu .nav-item.active i,
+#menu .nav-item.active svg {
+  color: var(--custom-theme-accent-strong) !important;
+  fill: var(--custom-theme-accent-strong) !important;
+  stroke: var(--custom-theme-accent-strong) !important;
+}
+
+
+/******************************************************
+ * Dashboard Widget Spacing
+ ******************************************************/
+td.stopgap,
+tr > td.stopgap {
+  display: table-cell !important;
+  visibility: visible !important;
+  width: var(--custom-dashboard-widget-gap) !important;
+  min-width: var(--custom-dashboard-widget-gap) !important;
+  max-width: var(--custom-dashboard-widget-gap) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+td.stopgap::before {
+  content: "" !important;
+  display: block !important;
+  width: var(--custom-dashboard-widget-gap) !important;
+  min-width: var(--custom-dashboard-widget-gap) !important;
+  height: 1px !important;
+}
+
+table:has(> tbody.sortable),
+table:has(td.stopgap) {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  overflow: visible !important;
+}
+
+
+/******************************************************
+ * Glass Dashboard Widgets
+ * One glass layer per individual widget.
+ ******************************************************/
+tbody.sortable {
+  display: table !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 0 var(--custom-dashboard-widget-gap) 0 !important;
+
+  background: var(--custom-dashboard-tile-bg) !important;
+  background-color: var(--custom-dashboard-tile-bg) !important;
+  background-image: none !important;
+
+  backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+
+  border: 1px solid var(--custom-dashboard-tile-border) !important;
+  border-radius: var(--custom-dashboard-tile-radius) !important;
+  box-shadow: var(--custom-dashboard-tile-shadow) !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  overflow: hidden !important;
+}
+
+tbody.sortable:last-child {
+  margin-bottom: 0 !important;
+}
+
+tbody.sortable > tr,
+tbody.sortable > tr.header,
+tbody.sortable > tr.updated,
+tbody.sortable > tr > td,
+tbody.sortable > tr > th {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+tbody.sortable .tile-header,
+tbody.sortable .tile-header-left,
+tbody.sortable .tile-header-right,
+tbody.sortable .tile-header-right-controls,
+tbody.sortable .section,
+tbody.sortable .leftside,
+tbody.sortable .rightside {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+tbody.sortable > tr > td,
+tbody.sortable > tr > th {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+tbody.sortable > tr:first-child > td .tile-header {
+  border-top-left-radius: var(--custom-dashboard-tile-radius) !important;
+  border-top-right-radius: var(--custom-dashboard-tile-radius) !important;
+  overflow: hidden !important;
+}
+
+tbody.sortable .usage-disk,
+tbody.sortable .usage-disk.sys {
+  background: rgba(255, 255, 255, 0.12) !important;
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+}
+
+tbody.sortable .usage-disk > span:first-child,
+tbody.sortable .usage-disk.sys > span:first-child {
+  background: rgba(255, 255, 255, 0.35) !important;
+  background-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+tbody.sortable > tr:hover,
+tbody.sortable > tr:hover > td,
+tbody.sortable > tr:hover > th {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+
+/******************************************************
+ * Docker Containers Widget - Remove Per-Container Backgrounds
+ ******************************************************/
+#docker_view tr.updated td,
+#docker_view tr.updated td > span,
+#docker_view tr.updated td > span > span,
+#docker_view tr.updated td span.inner,
+#docker_view tr.updated td span.outer,
+#docker_view tr.updated td .inner,
+#docker_view tr.updated td .outer,
+#docker_view tr.updated:hover td,
+#docker_view tr.updated:hover td > span,
+#docker_view tr.updated:hover td span.inner,
+#docker_view tr.updated:hover td span.outer,
+table:has(#docker_view),
+tbody#docker_view,
+#docker_view {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+#docker_view tr.updated td > span {
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+}
+
+
+/******************************************************
+ * Glass Section Titles
+ ******************************************************/
+div.title {
+  background: var(--custom-dashboard-tile-bg) !important;
+  background-color: var(--custom-dashboard-tile-bg) !important;
+  backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+  border: 1px solid var(--custom-dashboard-tile-border) !important;
+  border-radius: var(--custom-dashboard-tile-radius) !important;
+  box-shadow: var(--custom-dashboard-tile-shadow) !important;
+  overflow: hidden !important;
+}
+
+div.title span,
+div.title .left,
+div.title .right,
+div.title i,
+div.title a,
+div.title img {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+div.title,
+div.title * {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+
+/******************************************************
+ * Glass Table Containers
+ * Generic styling for Unraid pages wrapped in:
+ * <div class="TableContainer">
+ ******************************************************/
+div.TableContainer {
+  background: var(--custom-dashboard-tile-bg) !important;
+  background-color: var(--custom-dashboard-tile-bg) !important;
+  background-image: none !important;
+  backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+  border: 1px solid var(--custom-dashboard-tile-border) !important;
+  border-radius: var(--custom-dashboard-tile-radius) !important;
+  box-shadow: var(--custom-dashboard-tile-shadow) !important;
+  overflow: hidden !important;
+}
+
+div.TableContainer table,
+div.TableContainer table.unraid,
+div.TableContainer table.tablesorter {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  overflow: hidden !important;
+}
+
+div.TableContainer table thead,
+div.TableContainer table tbody,
+div.TableContainer table tr {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+div.TableContainer table thead tr > th,
+div.TableContainer table thead tr > td {
+  background: var(--custom-table-header-bg) !important;
+  background-color: var(--custom-table-header-bg) !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-color: var(--custom-dashboard-tile-border) !important;
+  border-bottom: 1px solid var(--custom-dashboard-tile-border) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+div.TableContainer table tbody tr > td,
+div.TableContainer table tbody tr > th {
+  background: var(--custom-table-cell-bg) !important;
+  background-color: var(--custom-table-cell-bg) !important;
+  background-image: none !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+div.TableContainer table tbody tr:hover > td,
+div.TableContainer table tbody tr:hover > th {
+  background: var(--custom-table-hover-bg) !important;
+  background-color: var(--custom-table-hover-bg) !important;
+  background-image: none !important;
+}
+
+div.TableContainer .tablesorter-header-inner,
+div.TableContainer .desc_readmore,
+div.TableContainer .readmore-js-section,
+div.TableContainer .readmore-js-toggle,
+div.TableContainer h4,
+div.TableContainer p,
+div.TableContainer strong,
+div.TableContainer em,
+div.TableContainer a.list,
+div.TableContainer i.list,
+div.TableContainer img.list {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+div.TableContainer a {
+  color: var(--custom-theme-text) !important;
+}
+
+div.TableContainer a:hover {
+  color: var(--custom-theme-accent) !important;
+}
+
+div.TableContainer input[type="button"],
+div.TableContainer input[type="submit"] {
+  background: rgba(10, 14, 18, 0.65) !important;
+  background-color: rgba(10, 14, 18, 0.65) !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border: 1px solid var(--custom-dashboard-tile-border) !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+
+div.TableContainer input[type="button"]:hover,
+div.TableContainer input[type="submit"]:hover {
+  background: var(--custom-table-hover-bg) !important;
+  background-color: var(--custom-table-hover-bg) !important;
+  border-color: var(--custom-theme-accent) !important;
+}
+
+div.TableContainer input[type="button"]:disabled,
+div.TableContainer input[type="submit"]:disabled {
+  opacity: 0.45 !important;
+}
+
+div.TableContainer input[type="checkbox"] {
+  accent-color: var(--custom-theme-accent-strong) !important;
+}
