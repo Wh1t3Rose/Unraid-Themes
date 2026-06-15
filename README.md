@@ -8,6 +8,7 @@ These themes provide a modern translucent interface while preserving readability
 
 <img width="1708" height="1275" alt="image" src="https://github.com/user-attachments/assets/fafb8b0f-5f8b-49df-986b-83a8cccb91a9" />
 
+<img width="1718" height="1276" alt="image" src="https://github.com/user-attachments/assets/9e17fc45-5849-46e0-b025-61d2b9d1cdad" />
 
 
 ## Features
