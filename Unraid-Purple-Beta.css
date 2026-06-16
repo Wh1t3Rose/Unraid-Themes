@@ -698,3 +698,314 @@ div.TableContainer::-webkit-scrollbar-thumb {
   background: var(--custom-theme-accent, rgba(255, 255, 255, 0.45)) !important;
   border-radius: 999px !important;
 }
+
+/******************************************************
+ * Users Page - Glass Bars + Theme Buttons
+ ******************************************************/
+
+/* Users bar, Management Access bar, and Shares Access bar */
+#displaybox > div > div:nth-child(1),
+#title,
+#displaybox > div > div:nth-child(3) > div {
+  background: var(--custom-dashboard-tile-bg) !important;
+  background-color: var(--custom-dashboard-tile-bg) !important;
+  background-image: none !important;
+
+  backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+
+  border: 1px solid var(--custom-dashboard-tile-border) !important;
+  border-radius: var(--custom-dashboard-tile-radius) !important;
+  box-shadow: var(--custom-dashboard-tile-shadow) !important;
+
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* Keep icons/text inside those bars clean */
+#displaybox > div > div:nth-child(1) *,
+#title *,
+#displaybox > div > div:nth-child(3) > div * {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* Users page action buttons */
+#displaybox > div > form > input[type="submit"],
+#displaybox > div > form > input[type="button"],
+#displaybox > div > form input[type="submit"],
+#displaybox > div > form input[type="button"] {
+  background: rgba(38, 38, 38, 0.62) !important;
+  background-color: rgba(38, 38, 38, 0.62) !important;
+  background-image: none !important;
+
+  color: var(--custom-theme-accent) !important;
+  border: 1px solid color-mix(in srgb, var(--custom-theme-accent) 45%, transparent) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--custom-theme-accent-strong) 24%, transparent) !important;
+
+  text-shadow: 0 0 6px color-mix(in srgb, var(--custom-theme-accent) 35%, transparent) !important;
+  letter-spacing: 0.08em !important;
+}
+
+/* Users page action button hover */
+#displaybox > div > form > input[type="submit"]:hover,
+#displaybox > div > form > input[type="button"]:hover,
+#displaybox > div > form input[type="submit"]:hover,
+#displaybox > div > form input[type="button"]:hover {
+  background: color-mix(in srgb, var(--custom-theme-accent-strong) 20%, transparent) !important;
+  background-color: color-mix(in srgb, var(--custom-theme-accent-strong) 20%, transparent) !important;
+
+  color: var(--custom-theme-icon-hover) !important;
+  border-color: var(--custom-theme-accent) !important;
+  box-shadow: 0 0 16px color-mix(in srgb, var(--custom-theme-accent) 38%, transparent) !important;
+}
+
+/* Exact Add User button selector */
+#displaybox > div > form > input[type="submit"]:nth-child(1) {
+  color: var(--custom-theme-accent) !important;
+}
+
+/******************************************************
+ * Users Page - Normalize User Tiles
+ ******************************************************/
+
+/* User tiles/cards under Management Access and Shares Access */
+#displaybox > div a:has(img),
+#displaybox > div div:has(> img),
+#displaybox > div span:has(> img) {
+  background: var(--custom-dashboard-tile-bg) !important;
+  background-color: var(--custom-dashboard-tile-bg) !important;
+  background-image: none !important;
+
+  backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+
+  border: 1px solid var(--custom-dashboard-tile-border) !important;
+  border-radius: 14px !important;
+  box-shadow: var(--custom-dashboard-tile-shadow) !important;
+
+  color: var(--custom-theme-accent, #c084fc) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* Username text inside tiles */
+#displaybox > div a:has(img) *,
+#displaybox > div div:has(> img) *,
+#displaybox > div span:has(> img) * {
+  color: var(--custom-theme-accent, #c084fc) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* User avatar image */
+#displaybox > div a:has(img) img,
+#displaybox > div div:has(> img) img,
+#displaybox > div span:has(> img) img {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/******************************************************
+ * Community Apps / Mobile Menu Glass Theming
+ ******************************************************/
+
+/* Community Apps search area */
+body > div.searchAreaHolder.menuAdjust {
+  background: var(--custom-dashboard-tile-bg) !important;
+  background-color: var(--custom-dashboard-tile-bg) !important;
+  background-image: none !important;
+
+  backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+
+  border: 1px solid var(--custom-dashboard-tile-border) !important;
+  border-radius: var(--custom-dashboard-tile-radius) !important;
+  box-shadow: var(--custom-dashboard-tile-shadow) !important;
+
+  color: var(--custom-theme-text) !important;
+}
+
+/* Mobile menu panel */
+#mobileMenu > div {
+  background: var(--custom-dashboard-tile-bg) !important;
+  background-color: var(--custom-dashboard-tile-bg) !important;
+  background-image: none !important;
+
+  backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+
+  border: 1px solid var(--custom-dashboard-tile-border) !important;
+  border-radius: var(--custom-dashboard-tile-radius) !important;
+  box-shadow: var(--custom-dashboard-tile-shadow) !important;
+
+  color: var(--custom-theme-text) !important;
+}
+
+/* Mobile menu text/icons */
+#mobileMenu > div,
+#mobileMenu > div *,
+body > div.searchAreaHolder.menuAdjust,
+body > div.searchAreaHolder.menuAdjust * {
+  color: var(--custom-theme-text) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* Specific Community Apps category text */
+#category_list > ul > li:nth-child(4) {
+  color: var(--custom-theme-accent) !important;
+}
+
+/* Specific Spotlight app name text */
+#templates_content > div.ca_homeTemplates.homeonlynew.caHomeSpotlight > div:nth-child(3) > div > div.ca_appPopup.ca_backgroundClickable > div.ca_applicationName.ellipsis {
+  color: var(--custom-theme-accent) !important;
+}
+
+
+/******************************************************
+ * Community Apps Cards - Match Home Widget Glass
+ ******************************************************/
+
+/* Main Community Apps cards / spotlight cards */
+.ca_holder,
+.ca_holder.spotlightHome,
+.ca_holder.ca_appPopup,
+.ca_holder.spotlightHome.ca_appPopup,
+#templates_content .ca_holder,
+#templates_content .spotlightHome {
+  background: var(--custom-dashboard-tile-bg) !important;
+  background-color: var(--custom-dashboard-tile-bg) !important;
+  background-image: none !important;
+
+  backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+
+  border: 1px solid var(--custom-dashboard-tile-border) !important;
+  border-radius: var(--custom-dashboard-tile-radius) !important;
+  box-shadow: var(--custom-dashboard-tile-shadow) !important;
+
+  overflow: hidden !important;
+  color: var(--custom-theme-text) !important;
+}
+
+/* Remove nested gray/solid layers inside cards */
+.ca_holder .ca_appPopup,
+.ca_holder .ca_backgroundClickable,
+.ca_holder .cardDescription,
+.ca_holder .cardDesc,
+.ca_holder .ca_iconArea,
+.ca_holder .ca_bottomLine,
+.ca_holder .ca_bottomLineSpotLight,
+.ca_holder .cardCategory,
+.ca_holder .ca_author,
+.ca_holder .ca_applicationName {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* App name / important card text */
+.ca_holder .ca_applicationName,
+.ca_holder .ca_applicationName.ellipsis,
+.ca_holder .cardCategory {
+  color: var(--custom-theme-accent) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* Description/body text */
+.ca_holder .cardDescription,
+.ca_holder .cardDesc,
+.ca_holder .ca_author,
+.ca_holder .ca_backgroundClickable {
+  color: var(--custom-theme-text) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* Community Apps card buttons */
+.ca_holder .caButton,
+.ca_holder .infoButton,
+.ca_holder .supportButton,
+.ca_holder .actionsButton {
+  background: rgba(38, 38, 38, 0.62) !important;
+  background-color: rgba(38, 38, 38, 0.62) !important;
+  background-image: none !important;
+
+  color: var(--custom-theme-accent) !important;
+  border: 1px solid color-mix(in srgb, var(--custom-theme-accent) 45%, transparent) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--custom-theme-accent-strong) 22%, transparent) !important;
+
+  text-shadow: 0 0 6px color-mix(in srgb, var(--custom-theme-accent) 35%, transparent) !important;
+}
+
+/* Button hover */
+.ca_holder .caButton:hover,
+.ca_holder .infoButton:hover,
+.ca_holder .supportButton:hover,
+.ca_holder .actionsButton:hover {
+  background: color-mix(in srgb, var(--custom-theme-accent-strong) 20%, transparent) !important;
+  background-color: color-mix(in srgb, var(--custom-theme-accent-strong) 20%, transparent) !important;
+
+  color: var(--custom-theme-text) !important;
+  border-color: var(--custom-theme-accent) !important;
+  box-shadow: 0 0 16px color-mix(in srgb, var(--custom-theme-accent) 38%, transparent) !important;
+}
+
+/* Favorite / pinned / plugin badges */
+.ca_holder .appPlugin,
+.ca_holder .favCardBackground,
+.ca_holder .favCardBackgroundHide,
+.ca_holder .pinnedCard {
+  color: var(--custom-theme-accent) !important;
+  fill: var(--custom-theme-accent) !important;
+  border-color: var(--custom-theme-accent) !important;
+}
+
+/* App icon stays clean */
+.ca_holder img.ca_displayIcon {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+
+/******************************************************
+ * Community Apps Card Description - Keep White
+ ******************************************************/
+
+.cardDesc,
+.ca_holder .cardDesc,
+.ca_holder .cardDescription .cardDesc {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+/******************************************************
+ * Community Apps Card Category - Keep White
+ ******************************************************/
+
+.cardCategory,
+.ca_holder .cardCategory {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+/******************************************************
+ * Community Apps Card Author - Keep White
+ ******************************************************/
+
+.ca_author,
+.ca_author.ellipsis,
+.ca_holder .ca_author,
+.ca_holder .ca_author.ellipsis {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
