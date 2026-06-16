@@ -131,7 +131,6 @@ div.content,
 
 /******************************************************
  * Dashboard Control / Action Icons
- * Removes button backgrounds/fills without touching status icons.
  ******************************************************/
 .tile-header-right .control,
 .tile-header-right-controls .control,
@@ -345,7 +344,7 @@ div.title a {
 
 /******************************************************
  * Dashboard Widget Spacing
- * SAFE VERSION: ne force plus les cellules cachées à redevenir visibles
+ * SAFE VERSION
  ******************************************************/
 td.stopgap,
 tr > td.stopgap {
@@ -387,7 +386,7 @@ table:has(td.stopgap) {
 
 /******************************************************
  * Glass Dashboard Widgets
- * SAFE VERSION: ne force plus display:table sur tous les widgets
+ * SAFE VERSION
  ******************************************************/
 tbody.sortable {
   width: 100% !important;
@@ -407,6 +406,58 @@ tbody.sortable {
   border-collapse: separate !important;
   border-spacing: 0 !important;
   overflow: hidden !important;
+}
+
+/******************************************************
+ * Dashboard Corner Artifact Fix
+ ******************************************************/
+tbody.sortable,
+tbody.sortable > tr,
+tbody.sortable > tr > th,
+tbody.sortable .section,
+tbody.sortable .leftside,
+tbody.sortable .rightside {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+tbody.sortable > tr > td,
+tbody.sortable .tile-header,
+tbody.sortable .tile-header-left,
+tbody.sortable .tile-header-right,
+tbody.sortable .tile-header-right-controls {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+tbody.sortable > tr:first-child > td:first-child {
+  border-top-left-radius: var(--custom-dashboard-tile-radius) !important;
+}
+
+tbody.sortable > tr:first-child > td:last-child {
+  border-top-right-radius: var(--custom-dashboard-tile-radius) !important;
+}
+
+tbody.sortable > tr:last-child > td:first-child {
+  border-bottom-left-radius: var(--custom-dashboard-tile-radius) !important;
+}
+
+tbody.sortable > tr:last-child > td:last-child {
+  border-bottom-right-radius: var(--custom-dashboard-tile-radius) !important;
+}
+
+tbody.sortable::before,
+tbody.sortable::after,
+tbody.sortable > tr::before,
+tbody.sortable > tr::after,
+tbody.sortable > tr > td::before,
+tbody.sortable > tr > td::after,
+tbody.sortable > tr > th::before,
+tbody.sortable > tr > th::after {
+  content: none !important;
+  display: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 tbody.sortable:last-child {
@@ -446,7 +497,6 @@ tbody.sortable > tr > th {
 tbody.sortable > tr:first-child > td .tile-header {
   border-top-left-radius: var(--custom-dashboard-tile-radius) !important;
   border-top-right-radius: var(--custom-dashboard-tile-radius) !important;
-  overflow: hidden !important;
 }
 
 tbody.sortable .usage-disk,
@@ -473,6 +523,51 @@ tbody.sortable > tr:hover > th {
 
 
 /******************************************************
+ * Widget title color - make all widget titles purple
+ ******************************************************/
+tbody.sortable .tile-header,
+tbody.sortable .tile-header-left,
+tbody.sortable .tile-header-left *,
+tbody.sortable .title,
+tbody.sortable .heading,
+tbody.sortable strong,
+tbody.sortable b {
+  color: var(--custom-theme-accent) !important;
+}
+
+tbody.sortable .tile-header i,
+tbody.sortable .tile-header svg,
+tbody.sortable .tile-header .fa {
+  color: var(--custom-theme-accent) !important;
+  fill: var(--custom-theme-accent) !important;
+  stroke: var(--custom-theme-accent) !important;
+}
+
+
+/******************************************************
+ * Fix clipped widget logos/icons
+ ******************************************************/
+tbody.sortable .tile-header,
+tbody.sortable .tile-header-left,
+tbody.sortable .tile-header-left a,
+tbody.sortable .tile-header-left span,
+tbody.sortable .tile-header-left i,
+tbody.sortable .tile-header-left img,
+tbody.sortable .tile-header-left svg {
+  overflow: visible !important;
+}
+
+tbody.sortable .tile-header-left img,
+tbody.sortable .tile-header-left svg,
+tbody.sortable .tile-header-left i,
+tbody.sortable .tile-header-left .fa {
+  border-radius: 0 !important;
+  clip-path: none !important;
+  mask: none !important;
+}
+
+
+/******************************************************
  * Docker Containers Widget - Remove Per-Container Backgrounds
  ******************************************************/
 #docker_view tr.updated td,
@@ -488,13 +583,31 @@ tbody.sortable > tr:hover > th {
 #docker_view tr.updated:hover td span.outer,
 table:has(#docker_view),
 tbody#docker_view,
-#docker_view {
+#docker_view,
+#docker_view .outer,
+#docker_view .inner,
+#docker_view .child,
+#docker_view .children,
+#docker_view .group,
+#docker_view .docker_readmore,
+#docker_view .docker_folder,
+#docker_view .docker_container,
+#docker_view .heading,
+#docker_view .section {
   background: transparent !important;
   background-color: transparent !important;
   background-image: none !important;
   border: 0 !important;
   box-shadow: none !important;
   outline: 0 !important;
+}
+
+#docker_view .outer,
+#docker_view .inner,
+#docker_view .group,
+#docker_view .docker_folder,
+#docker_view .docker_container {
+  border-radius: 0 !important;
 }
 
 #docker_view tr.updated td > span {
@@ -535,8 +648,6 @@ div.title * {
 
 /******************************************************
  * Glass Table Containers
- * Generic styling for Unraid pages wrapped in:
- * <div class="TableContainer">
  ******************************************************/
 div.TableContainer {
   background: var(--custom-dashboard-tile-bg) !important;
@@ -655,8 +766,6 @@ div.TableContainer input[type="checkbox"] {
 /******************************************************
  * Mobile Fix - Restore Horizontal Table Scrolling
  ******************************************************/
-
-/* Let Unraid table wrappers scroll horizontally on mobile */
 div.TableContainer {
   max-width: 100% !important;
   overflow-x: auto !important;
@@ -665,14 +774,12 @@ div.TableContainer {
   overscroll-behavior-x: contain !important;
 }
 
-/* Do not let inner tables clip their contents */
 div.TableContainer table,
 div.TableContainer table.unraid,
 div.TableContainer table.tablesorter {
   overflow: visible !important;
 }
 
-/* On smaller screens, preserve table width so it can scroll instead of crushing */
 @media screen and (max-width: 768px) {
   div.TableContainer table,
   div.TableContainer table.unraid,
@@ -682,7 +789,6 @@ div.TableContainer table.tablesorter {
   }
 }
 
-/* Keep the glass rounding while still allowing horizontal scrolling */
 div.TableContainer::-webkit-scrollbar {
   height: 8px !important;
 }
@@ -700,8 +806,6 @@ div.TableContainer::-webkit-scrollbar-thumb {
 /******************************************************
  * Users Page - Glass Bars + Theme Buttons
  ******************************************************/
-
-/* Users bar, Management Access bar, and Shares Access bar */
 #displaybox > div > div:nth-child(1),
 #title,
 #displaybox > div > div:nth-child(3) > div {
@@ -720,7 +824,6 @@ div.TableContainer::-webkit-scrollbar-thumb {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
 }
 
-/* Keep icons/text inside those bars clean */
 #displaybox > div > div:nth-child(1) *,
 #title *,
 #displaybox > div > div:nth-child(3) > div * {
@@ -735,7 +838,6 @@ div.TableContainer::-webkit-scrollbar-thumb {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
 }
 
-/* Users page action buttons */
 #displaybox > div > form > input[type="submit"],
 #displaybox > div > form > input[type="button"],
 #displaybox > div > form input[type="submit"],
@@ -753,7 +855,6 @@ div.TableContainer::-webkit-scrollbar-thumb {
   letter-spacing: 0.08em !important;
 }
 
-/* Users page action button hover */
 #displaybox > div > form > input[type="submit"]:hover,
 #displaybox > div > form > input[type="button"]:hover,
 #displaybox > div > form input[type="submit"]:hover,
@@ -766,19 +867,22 @@ div.TableContainer::-webkit-scrollbar-thumb {
   box-shadow: 0 0 16px color-mix(in srgb, var(--custom-theme-accent) 38%, transparent) !important;
 }
 
-/* Exact Add User button selector */
 #displaybox > div > form > input[type="submit"]:nth-child(1) {
   color: var(--custom-theme-accent) !important;
 }
 
 /******************************************************
  * Users Page - Normalize User Tiles
+ * SAFE / scoped version
  ******************************************************/
 
-/* User tiles/cards under Management Access and Shares Access */
-#displaybox > div a:has(img),
-#displaybox > div div:has(> img),
-#displaybox > div span:has(> img) {
+/* Only target avatar-like user tiles, not every div/span with an image */
+#displaybox > div a:has(> img[alt*="user" i]),
+#displaybox > div div:has(> img[alt*="user" i]),
+#displaybox > div span:has(> img[alt*="user" i]),
+#displaybox > div a:has(> img[src*="plugins/dynamix/images/user" i]),
+#displaybox > div div:has(> img[src*="plugins/dynamix/images/user" i]),
+#displaybox > div span:has(> img[src*="plugins/dynamix/images/user" i]) {
   background: var(--custom-dashboard-tile-bg) !important;
   background-color: var(--custom-dashboard-tile-bg) !important;
   background-image: none !important;
@@ -794,18 +898,22 @@ div.TableContainer::-webkit-scrollbar-thumb {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
 }
 
-/* Username text inside tiles */
-#displaybox > div a:has(img) *,
-#displaybox > div div:has(> img) *,
-#displaybox > div span:has(> img) * {
+#displaybox > div a:has(> img[alt*="user" i]) *,
+#displaybox > div div:has(> img[alt*="user" i]) *,
+#displaybox > div span:has(> img[alt*="user" i]) *,
+#displaybox > div a:has(> img[src*="plugins/dynamix/images/user" i]) *,
+#displaybox > div div:has(> img[src*="plugins/dynamix/images/user" i]) *,
+#displaybox > div span:has(> img[src*="plugins/dynamix/images/user" i]) * {
   color: var(--custom-theme-accent, #c084fc) !important;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
 }
 
-/* User avatar image */
-#displaybox > div a:has(img) img,
-#displaybox > div div:has(> img) img,
-#displaybox > div span:has(> img) img {
+#displaybox > div a:has(> img[alt*="user" i]) img,
+#displaybox > div div:has(> img[alt*="user" i]) img,
+#displaybox > div span:has(> img[alt*="user" i]) img,
+#displaybox > div a:has(> img[src*="plugins/dynamix/images/user" i]) img,
+#displaybox > div div:has(> img[src*="plugins/dynamix/images/user" i]) img,
+#displaybox > div span:has(> img[src*="plugins/dynamix/images/user" i]) img {
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
@@ -815,7 +923,6 @@ div.TableContainer::-webkit-scrollbar-thumb {
  * Community Apps / Mobile Menu Glass Theming
  ******************************************************/
 
-/* Community Apps search area */
 body > div.searchAreaHolder.menuAdjust {
   background: var(--custom-dashboard-tile-bg) !important;
   background-color: var(--custom-dashboard-tile-bg) !important;
@@ -831,7 +938,6 @@ body > div.searchAreaHolder.menuAdjust {
   color: var(--custom-theme-text) !important;
 }
 
-/* Mobile menu panel */
 #mobileMenu > div {
   background: var(--custom-dashboard-tile-bg) !important;
   background-color: var(--custom-dashboard-tile-bg) !important;
@@ -847,7 +953,6 @@ body > div.searchAreaHolder.menuAdjust {
   color: var(--custom-theme-text) !important;
 }
 
-/* Mobile menu text/icons */
 #mobileMenu > div,
 #mobileMenu > div *,
 body > div.searchAreaHolder.menuAdjust,
@@ -856,12 +961,10 @@ body > div.searchAreaHolder.menuAdjust * {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
 }
 
-/* Specific Community Apps category text */
 #category_list > ul > li:nth-child(4) {
   color: var(--custom-theme-accent) !important;
 }
 
-/* Specific Spotlight app name text */
 #templates_content > div.ca_homeTemplates.homeonlynew.caHomeSpotlight > div:nth-child(3) > div > div.ca_appPopup.ca_backgroundClickable > div.ca_applicationName.ellipsis {
   color: var(--custom-theme-accent) !important;
 }
@@ -871,7 +974,6 @@ body > div.searchAreaHolder.menuAdjust * {
  * Community Apps Cards - Match Home Widget Glass
  ******************************************************/
 
-/* Main Community Apps cards / spotlight cards */
 .ca_holder,
 .ca_holder.spotlightHome,
 .ca_holder.ca_appPopup,
@@ -893,7 +995,6 @@ body > div.searchAreaHolder.menuAdjust * {
   color: var(--custom-theme-text) !important;
 }
 
-/* Remove nested gray/solid layers inside cards */
 .ca_holder .ca_appPopup,
 .ca_holder .ca_backgroundClickable,
 .ca_holder .cardDescription,
@@ -910,7 +1011,6 @@ body > div.searchAreaHolder.menuAdjust * {
   box-shadow: none !important;
 }
 
-/* App name / important card text */
 .ca_holder .ca_applicationName,
 .ca_holder .ca_applicationName.ellipsis,
 .ca_holder .cardCategory {
@@ -918,7 +1018,6 @@ body > div.searchAreaHolder.menuAdjust * {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
 }
 
-/* Description/body text */
 .ca_holder .cardDescription,
 .ca_holder .cardDesc,
 .ca_holder .ca_author,
@@ -927,7 +1026,6 @@ body > div.searchAreaHolder.menuAdjust * {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
 }
 
-/* Community Apps card buttons */
 .ca_holder .caButton,
 .ca_holder .infoButton,
 .ca_holder .supportButton,
@@ -944,7 +1042,6 @@ body > div.searchAreaHolder.menuAdjust * {
   text-shadow: 0 0 6px color-mix(in srgb, var(--custom-theme-accent) 35%, transparent) !important;
 }
 
-/* Button hover */
 .ca_holder .caButton:hover,
 .ca_holder .infoButton:hover,
 .ca_holder .supportButton:hover,
@@ -957,7 +1054,6 @@ body > div.searchAreaHolder.menuAdjust * {
   box-shadow: 0 0 16px color-mix(in srgb, var(--custom-theme-accent) 38%, transparent) !important;
 }
 
-/* Favorite / pinned / plugin badges */
 .ca_holder .appPlugin,
 .ca_holder .favCardBackground,
 .ca_holder .favCardBackgroundHide,
@@ -967,7 +1063,6 @@ body > div.searchAreaHolder.menuAdjust * {
   border-color: var(--custom-theme-accent) !important;
 }
 
-/* App icon stays clean */
 .ca_holder img.ca_displayIcon {
   background: transparent !important;
   border: 0 !important;
@@ -976,9 +1071,8 @@ body > div.searchAreaHolder.menuAdjust * {
 
 
 /******************************************************
- * Community Apps Card Description - Keep White
+ * Community Apps text fixes
  ******************************************************/
-
 .cardDesc,
 .ca_holder .cardDesc,
 .ca_holder .cardDescription .cardDesc {
@@ -986,19 +1080,11 @@ body > div.searchAreaHolder.menuAdjust * {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
 }
 
-/******************************************************
- * Community Apps Card Category - Keep White
- ******************************************************/
-
 .cardCategory,
 .ca_holder .cardCategory {
   color: #ffffff !important;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
 }
-
-/******************************************************
- * Community Apps Card Author - Keep White
- ******************************************************/
 
 .ca_author,
 .ca_author.ellipsis,
@@ -1006,4 +1092,71 @@ body > div.searchAreaHolder.menuAdjust * {
 .ca_holder .ca_author.ellipsis {
   color: #ffffff !important;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* Docker / FolderView icon background fix */
+#docker_view span.hand,
+#docker_view span.hand img.img,
+#docker_view span.hand > img,
+span.hand:has(> img.img),
+span.hand:has(> img),
+img.img {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+#docker_view span.hand:hover,
+#docker_view span.hand:focus,
+#docker_view span.hand:active,
+#docker_view span.hand:hover img.img,
+#docker_view span.hand:focus img.img,
+#docker_view span.hand:active img.img {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Reduce Docker icon clickable area to image bounds */
+#docker_view span.hand,
+span.hand:has(> img.img),
+span.hand:has(> img) {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: fit-content !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  vertical-align: middle !important;
+}
+
+#docker_view span.hand img.img,
+#docker_view span.hand > img,
+img.img {
+  display: block !important;
+  width: 32px !important;
+  height: 32px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
 }
