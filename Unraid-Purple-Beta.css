@@ -345,11 +345,10 @@ div.title a {
 
 /******************************************************
  * Dashboard Widget Spacing
+ * SAFE VERSION: ne force plus les cellules cachées à redevenir visibles
  ******************************************************/
 td.stopgap,
 tr > td.stopgap {
-  display: table-cell !important;
-  visibility: visible !important;
   width: var(--custom-dashboard-widget-gap) !important;
   min-width: var(--custom-dashboard-widget-gap) !important;
   max-width: var(--custom-dashboard-widget-gap) !important;
@@ -388,10 +387,9 @@ table:has(td.stopgap) {
 
 /******************************************************
  * Glass Dashboard Widgets
- * One glass layer per individual widget.
+ * SAFE VERSION: ne force plus display:table sur tous les widgets
  ******************************************************/
 tbody.sortable {
-  display: table !important;
   width: 100% !important;
   box-sizing: border-box !important;
   margin: 0 0 var(--custom-dashboard-widget-gap) 0 !important;
