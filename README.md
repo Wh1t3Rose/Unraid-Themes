@@ -1,5 +1,13 @@
 # Unraid Glass Themes
 
+> [!WARNING]
+> **Beta Release**
+>
+> These themes are currently in **Beta**. Some areas of the Unraid WebUI or plugin pages may not be fully styled yet, and future Unraid updates may require CSS changes.
+
+> [!NOTE]
+> These themes have only been tested on **Unraid 7.3.x**.
+
 Custom glass-style themes for the Unraid WebUI with matching **Purple** and **Red** variants.
 
 These themes provide a modern translucent interface while preserving readability and the overall Unraid experience.
@@ -9,7 +17,6 @@ These themes provide a modern translucent interface while preserving readability
 <img width="1708" height="1275" alt="image" src="https://github.com/user-attachments/assets/fafb8b0f-5f8b-49df-986b-83a8cccb91a9" />
 
 <img width="1718" height="1276" alt="image" src="https://github.com/user-attachments/assets/9e17fc45-5849-46e0-b025-61d2b9d1cdad" />
-
 
 ## Features
 
@@ -41,7 +48,8 @@ These themes provide a modern translucent interface while preserving readability
 ## Requirements
 
 * Unraid 7.x
-* Custom CSS plugin (or another method of loading custom CSS)
+* Tested on Unraid 7.3.x
+* Custom CSS plugin or another method of loading custom CSS
 * A background image located at:
 
 ```text
@@ -95,6 +103,7 @@ Adjusting these values allows you to create additional color variants.
 
 ## Notes
 
+* These themes are currently in Beta.
 * The themes use modern CSS features including `:has()`.
 * Tested primarily with Chromium-based browsers.
 * Custom plugin pages may require additional styling depending on the plugin.
