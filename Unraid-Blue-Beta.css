@@ -227,38 +227,72 @@ i.fa.fa-fw.fa-info-circle.control {
 
 /******************************************************
  * Glass Navigation Menu
+ * Color + glass only. Do not alter mobile scrolling.
  ******************************************************/
-#menu {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-}
 
-#menu .nav-tile,
-#menu .nav-tile.right {
+/* Glass shell only. Do not set overflow here. */
+#menu {
   background: var(--custom-dashboard-tile-bg) !important;
   background-color: var(--custom-dashboard-tile-bg) !important;
+  background-image: none !important;
+
   backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
   -webkit-backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
+
   border: 1px solid var(--custom-dashboard-tile-border) !important;
   border-radius: var(--custom-dashboard-tile-radius) !important;
   box-shadow: var(--custom-dashboard-tile-shadow) !important;
-  overflow: hidden !important;
 }
 
+/* Keep nav tiles from adding extra panes, but do not alter layout/scrolling. */
+#menu .nav-tile,
+#menu .nav-tile.right {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Transparent nav item backgrounds */
 #menu .nav-item,
 #menu .nav-user {
   background: transparent !important;
   background-color: transparent !important;
 }
 
+/* Main nav text color only */
 #menu .nav-item a,
 #menu .nav-item b,
-#menu .nav-item span {
-  background: transparent !important;
+#menu .nav-item span,
+#menu .nav-title,
+#menu .nav-title * {
+  color: var(--custom-theme-accent) !important;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
 }
 
+/* Icons/SVGs only */
+#menu .nav-item i,
+#menu .nav-item svg {
+  color: var(--custom-theme-accent) !important;
+  fill: var(--custom-theme-accent) !important;
+  stroke: var(--custom-theme-accent) !important;
+}
+
+/* Active nav item */
+#menu .nav-item.active,
+#menu .nav-item.active a,
+#menu .nav-item.active b,
+#menu .nav-item.active span,
+#menu .nav-item.active i,
+#menu .nav-item.active svg {
+  color: var(--custom-theme-accent-strong) !important;
+  fill: var(--custom-theme-accent-strong) !important;
+  stroke: var(--custom-theme-accent-strong) !important;
+}
+
+/* Active/hover background only, no layout changes */
 #menu .nav-item.active {
   background: rgba(255, 255, 255, 0.12) !important;
   background-color: rgba(255, 255, 255, 0.12) !important;
@@ -269,39 +303,11 @@ i.fa.fa-fw.fa-info-circle.control {
   background-color: rgba(255, 255, 255, 0.08) !important;
 }
 
-#menu > div:nth-child(1),
-#menu > div:nth-child(1) *,
-#menu > div:first-child,
-#menu > div:first-child *,
-#menu .nav-tile:not(.right),
-#menu .nav-tile:not(.right) *,
-#menu .nav-title,
-#menu .nav-title *,
-#menu .nav-item,
-#menu .nav-item a,
-#menu .nav-item span,
-#menu .nav-item b,
-#menu .nav-item i,
-#menu .nav-item svg {
-  color: var(--custom-theme-accent) !important;
-  fill: var(--custom-theme-accent) !important;
-  stroke: var(--custom-theme-accent) !important;
-}
-
-#menu .nav-item.active,
-#menu .nav-item.active *,
-#menu .nav-item.active a {
-  color: var(--custom-theme-accent-strong) !important;
-  fill: var(--custom-theme-accent-strong) !important;
-  stroke: var(--custom-theme-accent-strong) !important;
-}
-
+/* Green nav line / active underline */
 .nav-title::after,
 div.nav-title::after,
 #menu div.nav-item.active::after,
 #menu .nav-item.active::after,
-#menu > div:nth-child(1) .nav-item.active::after,
-#menu .nav-tile:not(.right) .nav-item.active::after,
 #menu .nav-title::after,
 #menu div.nav-title::after {
   background: var(--custom-theme-nav-line) !important;
@@ -700,120 +706,6 @@ div.TableContainer::-webkit-scrollbar-thumb {
 }
 
 /******************************************************
- * Users Page - Glass Bars + Theme Buttons
- ******************************************************/
-
-/* Users bar, Management Access bar, and Shares Access bar */
-#displaybox > div > div:nth-child(1),
-#title,
-#displaybox > div > div:nth-child(3) > div {
-  background: var(--custom-dashboard-tile-bg) !important;
-  background-color: var(--custom-dashboard-tile-bg) !important;
-  background-image: none !important;
-
-  backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
-  -webkit-backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
-
-  border: 1px solid var(--custom-dashboard-tile-border) !important;
-  border-radius: var(--custom-dashboard-tile-radius) !important;
-  box-shadow: var(--custom-dashboard-tile-shadow) !important;
-
-  color: #ffffff !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
-}
-
-/* Keep icons/text inside those bars clean */
-#displaybox > div > div:nth-child(1) *,
-#title *,
-#displaybox > div > div:nth-child(3) > div * {
-  background: transparent !important;
-  background-color: transparent !important;
-  background-image: none !important;
-
-  color: #ffffff !important;
-  fill: #ffffff !important;
-  stroke: #ffffff !important;
-
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
-}
-
-/* Users page action buttons */
-#displaybox > div > form > input[type="submit"],
-#displaybox > div > form > input[type="button"],
-#displaybox > div > form input[type="submit"],
-#displaybox > div > form input[type="button"] {
-  background: rgba(38, 38, 38, 0.62) !important;
-  background-color: rgba(38, 38, 38, 0.62) !important;
-  background-image: none !important;
-
-  color: var(--custom-theme-accent) !important;
-  border: 1px solid color-mix(in srgb, var(--custom-theme-accent) 45%, transparent) !important;
-  border-radius: 8px !important;
-  box-shadow: 0 0 12px color-mix(in srgb, var(--custom-theme-accent-strong) 24%, transparent) !important;
-
-  text-shadow: 0 0 6px color-mix(in srgb, var(--custom-theme-accent) 35%, transparent) !important;
-  letter-spacing: 0.08em !important;
-}
-
-/* Users page action button hover */
-#displaybox > div > form > input[type="submit"]:hover,
-#displaybox > div > form > input[type="button"]:hover,
-#displaybox > div > form input[type="submit"]:hover,
-#displaybox > div > form input[type="button"]:hover {
-  background: color-mix(in srgb, var(--custom-theme-accent-strong) 20%, transparent) !important;
-  background-color: color-mix(in srgb, var(--custom-theme-accent-strong) 20%, transparent) !important;
-
-  color: var(--custom-theme-icon-hover) !important;
-  border-color: var(--custom-theme-accent) !important;
-  box-shadow: 0 0 16px color-mix(in srgb, var(--custom-theme-accent) 38%, transparent) !important;
-}
-
-/* Exact Add User button selector */
-#displaybox > div > form > input[type="submit"]:nth-child(1) {
-  color: var(--custom-theme-accent) !important;
-}
-
-/******************************************************
- * Users Page - Normalize User Tiles
- ******************************************************/
-
-/* User tiles/cards under Management Access and Shares Access */
-#displaybox > div a:has(img),
-#displaybox > div div:has(> img),
-#displaybox > div span:has(> img) {
-  background: var(--custom-dashboard-tile-bg) !important;
-  background-color: var(--custom-dashboard-tile-bg) !important;
-  background-image: none !important;
-
-  backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
-  -webkit-backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
-
-  border: 1px solid var(--custom-dashboard-tile-border) !important;
-  border-radius: 14px !important;
-  box-shadow: var(--custom-dashboard-tile-shadow) !important;
-
-  color: var(--custom-theme-accent, #60a5fa) !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
-}
-
-/* Username text inside tiles */
-#displaybox > div a:has(img) *,
-#displaybox > div div:has(> img) *,
-#displaybox > div span:has(> img) * {
-  color: var(--custom-theme-accent, #60a5fa) !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
-}
-
-/* User avatar image */
-#displaybox > div a:has(img) img,
-#displaybox > div div:has(> img) img,
-#displaybox > div span:has(> img) img {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-}
-
-/******************************************************
  * Community Apps / Mobile Menu Glass Theming
  ******************************************************/
 
@@ -974,18 +866,6 @@ body > div.searchAreaHolder.menuAdjust * {
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
-}
-
-
-/******************************************************
- * Community Apps Card Description - Keep White
- ******************************************************/
-
-.cardDesc,
-.ca_holder .cardDesc,
-.ca_holder .cardDescription .cardDesc {
-  color: #ffffff !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
 }
 
 
