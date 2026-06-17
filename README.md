@@ -53,18 +53,19 @@ These themes provide a modern translucent interface while preserving readability
 * A background image located at:
 
 ```text
-/plugins/custom.css/assets/bg.jpg
+flash/plugins/custom.css/assets/bg.jpg
 ```
 
 If you use a different image location, update the CSS accordingly.
 
 ## Installation
 
-1. Install the Custom CSS plugin.
-2. Copy the desired theme CSS file.
-3. Paste the contents into your Custom CSS configuration.
-4. Save the configuration.
-5. Refresh the Unraid WebUI.
+1.Switch Dark Theme > Settings > Display Settings > Dynamix color theme: Black
+2. Install the Custom CSS plugin from Comminity Apps.
+3. Copy the desired theme CSS file.
+4. Paste the contents into your Custom CSS configuration n the Black Theme Section (Not Global!).
+5. Save the configuration.
+6. Refresh the Unraid WebUI.
 
 ## Custom Background
 
