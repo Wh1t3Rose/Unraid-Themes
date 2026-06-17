@@ -7,7 +7,7 @@
  * Theme Variables
  ******************************************************/
 :root {
-  --custom-dashboard-tile-radius: 18px;
+  --custom-dashboard-tile-radius: 12px;
   --custom-dashboard-widget-gap: 16px;
 
   /* Lower = more transparent, higher = easier to read */
@@ -414,7 +414,7 @@ tbody.sortable {
   box-shadow: var(--custom-dashboard-tile-shadow) !important;
   border-collapse: separate !important;
   border-spacing: 0 !important;
-  overflow: hidden !important;
+  overflow: visible !important;
 }
 
 tbody.sortable:last-child {
@@ -454,7 +454,7 @@ tbody.sortable > tr > th {
 tbody.sortable > tr:first-child > td .tile-header {
   border-top-left-radius: var(--custom-dashboard-tile-radius) !important;
   border-top-right-radius: var(--custom-dashboard-tile-radius) !important;
-  overflow: hidden !important;
+  overflow: visible !important;
 }
 
 tbody.sortable .usage-disk,
