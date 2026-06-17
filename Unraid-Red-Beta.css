@@ -402,8 +402,8 @@ tbody.sortable {
   box-sizing: border-box !important;
   margin: 0 0 var(--custom-dashboard-widget-gap) 0 !important;
 
-  background: var(--custom-dashboard-tile-bg) !important;
-  background-color: var(--custom-dashboard-tile-bg) !important;
+  background: transparent !important;
+  background-color: transparent !important;
   background-image: none !important;
 
   backdrop-filter: blur(var(--custom-dashboard-tile-blur)) saturate(145%) !important;
@@ -494,6 +494,14 @@ tbody.sortable > tr:hover > th {
 #docker_view tr.updated:hover td > span,
 #docker_view tr.updated:hover td span.inner,
 #docker_view tr.updated:hover td span.outer,
+#docker_view td > span,
+#docker_view td > span > span,
+#docker_view td span.inner,
+#docker_view td span.outer,
+#docker_view td .inner,
+#docker_view td .outer,
+#docker_view td span.state,
+#docker_view td .state,
 table:has(#docker_view),
 tbody#docker_view,
 #docker_view {
@@ -506,6 +514,45 @@ tbody#docker_view,
 }
 
 #docker_view tr.updated td > span {
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+}
+
+
+/******************************************************
+ * Virtual Machines Widget - Remove Per-VM Backgrounds
+ ******************************************************/
+#vm_view tr.updated td,
+#vm_view tr.updated td > span,
+#vm_view tr.updated td > span > span,
+#vm_view tr.updated td span.inner,
+#vm_view tr.updated td span.outer,
+#vm_view tr.updated td .inner,
+#vm_view tr.updated td .outer,
+#vm_view tr.updated:hover td,
+#vm_view tr.updated:hover td > span,
+#vm_view tr.updated:hover td span.inner,
+#vm_view tr.updated:hover td span.outer,
+#vm_view td > span,
+#vm_view td > span > span,
+#vm_view td span.inner,
+#vm_view td span.outer,
+#vm_view td .inner,
+#vm_view td .outer,
+#vm_view td span.state,
+#vm_view td .state,
+table:has(#vm_view),
+tbody#vm_view,
+#vm_view {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+#vm_view tr.updated td > span {
   padding-top: 3px !important;
   padding-bottom: 3px !important;
 }
