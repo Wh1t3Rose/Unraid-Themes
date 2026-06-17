@@ -31,19 +31,6 @@ These themes provide a modern translucent interface while preserving readability
 * Green active navigation indicator
 * Matching Purple and Red theme variants
 
-## Included Themes
-
-### Purple Theme
-
-* Purple accents and controls
-* Purple server-name gradient
-* Purple-tinted Unraid logo
-
-### Red Theme
-
-* Red accents and controls
-* Red server-name gradient
-* Red-tinted Unraid logo
 
 ## Requirements
 
