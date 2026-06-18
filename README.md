@@ -36,7 +36,7 @@ These themes provide a modern translucent interface while preserving readability
 
 * Unraid 7.x
 * Tested on Unraid 7.3.x
-* Custom CSS plugin or another method of loading custom CSS
+* Custom WebUI CSS plugin from Community Apps Store 
 * A background image located at:
 
 ```text
