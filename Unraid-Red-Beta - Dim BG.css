@@ -516,9 +516,7 @@ tbody.sortable > tr:hover > th {
 #docker_view td .outer,
 #docker_view td span.state,
 #docker_view td .state,
-table:has(#docker_view),
-tbody#docker_view,
-#docker_view {
+table:has(#docker_view) {
   background: transparent !important;
   background-color: transparent !important;
   background-image: none !important;
@@ -1041,4 +1039,28 @@ body:has(#displaybox .Panels) .Panels .Panel i {
 body:has(#displaybox .Panels) .Panels .Panel .PanelText {
   color: var(--custom-theme-accent) !important;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* Force nested Docker app chips to inherit the same transparent tile style */
+#docker_view .outer,
+#docker_view .outer.solid,
+#docker_view .outer.apps,
+#docker_view .outer.started,
+#docker_view .outer.stopped,
+#docker_view .inner,
+#docker_view .hand,
+#docker_view .state,
+#docker_view .blue-text,
+#docker_view .green-text,
+#docker_view .red-text,
+#docker_view .outer::before,
+#docker_view .outer::after,
+#docker_view .inner::before,
+#docker_view .inner::after {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
 }
