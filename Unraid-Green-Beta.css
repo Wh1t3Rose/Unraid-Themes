@@ -11,10 +11,10 @@
   --custom-dashboard-widget-gap: 16px;
 
   /* Lower = more transparent, higher = easier to read */
-  --custom-dashboard-tile-bg: rgba(17, 24, 39, 0.52);
+  --custom-dashboard-tile-bg: rgba(17, 24, 39, 0.68);
   --custom-dashboard-tile-border: rgba(255, 255, 255, 0.16);
   --custom-dashboard-tile-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  --custom-dashboard-tile-blur: 20px;
+  --custom-dashboard-tile-blur: 28px;
 
   /* Table-specific glass values */
   --custom-table-cell-bg: rgba(17, 24, 39, 0.46);
