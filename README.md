@@ -18,6 +18,9 @@ These themes provide a modern translucent interface while preserving readability
 
 <img width="1718" height="1276" alt="image" src="https://github.com/user-attachments/assets/9e17fc45-5849-46e0-b025-61d2b9d1cdad" />
 
+<img width="1713" height="1259" alt="image" src="https://github.com/user-attachments/assets/e2ac0404-5cfc-445c-8873-a4457965d913" />
+
+
 ## Features
 
 * Glass / frosted-glass dashboard widgets
